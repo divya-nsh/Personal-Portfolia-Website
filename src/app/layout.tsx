@@ -12,7 +12,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Divyansh Soni - Portfolio",
+  title: "Divyansh Soni",
   description:
     "Hi, I'm Divyansh Soni, a full-stack web developer passionate about building modern, scalable web applications. Explore my projects, skills, and experience.",
 };
