@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-background: hsl(0, 0%, 2%);
+  --animate-blink-300: blink 1s ease-in-out 0.3s infinity;
+}
+
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+@layer base {
+  img {
+    background-color: var(--text-neutral-900);
+  }
+}
+
+* {
+  scrollbar-color: #555 #1e1e1e;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; /* Scrollbar color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+@utility gradient-text {
+  @apply bg-gradient-to-b from-blue-500 to-emerald-500 bg-clip-text text-transparent;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: black;
+  animation: blink 0.8s step-start infinite;
+}
+
+/* Her animated bg CSS */
+.box {
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+
+.spin-container {
+  animation: spin 12s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 5;
+}
+
+.shape {
+  transition: border-radius 1s ease-out;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite both alternate;
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+  box-shadow: 1px 1px 20px 2px rgb(64, 58, 58);
+  background-blend-mode: lighten;
+}
+
+.bd {
+  width: 142%;
+  height: 142%;
+  position: absolute;
+  left: -21%;
+  top: -21%;
+  /* background: url(/images/avatar.jpg); Will be added by inline style by using next image*/
+  background-size: 100%;
+  background-position: center center;
+  animation: spin 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
