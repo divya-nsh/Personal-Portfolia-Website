@@ -15,6 +15,24 @@ export const metadata: Metadata = {
   title: "Divyansh Soni",
   description:
     "Hi, I'm Divyansh Soni, a full-stack web developer passionate about building modern, scalable web applications. Explore my projects, skills, and experience.",
+  keywords: [
+    "Divyansh Soni",
+    "Full-Stack Developer",
+    "React Developer",
+    "Nodejs Developer",
+    "JavaScript Developer",
+  ],
+  metadataBase: new URL("https://divyanshsoni.site"),
+  openGraph: {
+    images: [
+      {
+        url: "/images/og-1200x630.png",
+        width: 1200,
+        height: 630,
+        alt: "Divyansh Avatar",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
