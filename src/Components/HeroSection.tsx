@@ -27,7 +27,7 @@ export default function HeroSec() {
           </div>
         </div>
 
-        <h2 className="-mt-2 text-5xl font-bold text-neutral-300 duration-600">
+        <h2 className="duration-600 -mt-2 text-5xl font-bold text-neutral-300">
           Hi, I&apos;m <span className="gradient-text"> Divyansh Soni</span>
         </h2>
         <p className="text-2xl font-bold text-neutral-300">

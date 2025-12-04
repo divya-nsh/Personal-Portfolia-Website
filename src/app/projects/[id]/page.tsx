@@ -39,7 +39,7 @@ export default async function ProjectDetailPage(props: Props) {
   if (!project) notFound();
 
   return (
-    <div className="mx-auto mt-4 mb-[100px] grid max-w-4xl rounded-xl px-4">
+    <div className="mx-auto mb-[100px] mt-4 grid max-w-4xl rounded-xl px-4">
       <Link
         href="/"
         className="mt-1 flex w-max items-center gap-2 rounded-md px-2 py-1 text-neutral-300 hover:opacity-80"
