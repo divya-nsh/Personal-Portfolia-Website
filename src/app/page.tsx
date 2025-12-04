@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectsSec from "@/Components/ProjectsSec";
 import SkillsSec from "@/Components/SkillsSec";
+import ExperienceSection from "@/Components/ExperienceSection";
 import HeroSec from "@/Components/HeroSection";
 import Image from "next/image";
 import gif from "@/assets/Cat-Typing.gif";
@@ -10,9 +11,13 @@ export default function IndexPage() {
     <>
       <h1 className="sr-only">Divyansh Soni — Full-Stack Web Developer</h1>
       <HeroSec />
+      <div className="mb-[50px]" />
       <SkillsSec />
       <div className="mb-[80px]" />
       <ProjectsSec />
+      <div className="mb-[100px]" />
+      <ExperienceSection />
+
       <div className="mb-[100px]" />
       <section className="mb-12">
         <div className="flex flex-col items-center justify-center px-4 text-center">

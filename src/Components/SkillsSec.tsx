@@ -14,9 +14,9 @@ export default function SkillsSec() {
           {skills.map((e, i) => (
             <div
               key={i}
-              className="relative items-center gap-3 rounded-lg border border-neutral-700 px-4 py-4"
+              className="relative items-center gap-3 rounded-lg border border-neutral-900 px-4 py-4"
             >
-              <h3 className="absolute top-0 left-0 mx-4 translate-y-[-50%] bg-background font-medium text-neutral-200">
+              <h3 className="bg-background absolute left-0 top-0 mx-4 translate-y-[-50%] font-medium text-neutral-200">
                 {e.category}
               </h3>
               <div className="mt-2 flex flex-wrap gap-4">

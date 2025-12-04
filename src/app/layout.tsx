@@ -43,10 +43,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} scroll bg-background text-neutral-100 antialiased`}
+        className={`${roboto.className} scroll bg-background relative text-neutral-100 antialiased`}
       >
         <NavBar />
-        <main>{children}</main>
+        <main className="relative z-10">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>
