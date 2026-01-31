@@ -40,6 +40,7 @@ export const icons = {
   Leetcode: urltoIcon(
     "https://img.icons8.com/external-tal-revivo-color-tal-revivo/$$size/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png",
   ),
+  prisma: urltoIcon("/images/prisma-logo.svg"),
 };
 
 function ReactQuery({ size = 16 }: TLogoProp) {
