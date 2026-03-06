@@ -22,7 +22,7 @@ export default function HeroSec() {
       <div className="grid flex-1 gap-4">
         <div className="flex">
           <div className="flex items-center gap-2 rounded-lg border border-neutral-800 px-3 py-1">
-            <span className="size-2 rounded-full bg-green-600" />
+            <span className="size-2 animate-pulse rounded-full bg-green-600" />
             <span className="text-sm text-neutral-300">Available for work</span>
           </div>
         </div>
