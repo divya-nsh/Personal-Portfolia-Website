@@ -32,11 +32,11 @@ export default function ProjectsSec() {
                 height={250}
                 alt="Project Thumbnail"
                 className="rounded-xs bg-neutral-800 object-cover"
-                src={e.imageURL || "https://placehold.co/300"}
+                src={e.images[0] || "https://placehold.co/300"}
               />
             </Link>
 
-            <div className="pt-1 pb-2">
+            <div className="pb-2 pt-1">
               <Link
                 href={`/projects/${e.slug}`}
                 className="transition-all duration-200 hover:underline"
@@ -47,24 +47,21 @@ export default function ProjectsSec() {
               </Link>
               {!!e.techStack.length && (
                 <ul className="my-1 mt-2 flex flex-wrap gap-2">
-                  {e.techStack.slice(0, 4).map((v) => (
-                    <li
-                      key={v}
-                      className="flex items-center rounded-lg bg-neutral-800 px-2 text-sm text-neutral-300"
-                    >
-                      {v}
+                  {e.techStack.slice(0, 3).map((v) => (
+                    <li key={v} className="text-sm text-neutral-200">
+                      #{v}
                     </li>
                   ))}
-                  {e.techStack.length > 4 && (
+                  {e.techStack.length > 3 && (
                     <li className="flex items-center text-sm text-blue-500 hover:opacity-90">
                       <Link href={`/projects/${e.slug}`}>
-                        +{e.techStack.length - 4} more
+                        +{e.techStack.length - 3} more
                       </Link>
                     </li>
                   )}
                 </ul>
               )}
-              <p className="mt-2 line-clamp-2 text-lg text-neutral-200">
+              <p className="mt-2 line-clamp-2 text-neutral-300">
                 {e.discription}
               </p>
               <div className="mt-3 flex items-center gap-2">
@@ -76,12 +73,14 @@ export default function ProjectsSec() {
                     Live <ArrowSquareOut size={18} />
                   </a>
                 )}
-                <a
-                  href={e.githubURL}
-                  className="flex items-center gap-1 rounded-lg border border-neutral-800 px-2 py-0.5 text-[0.9rem] font-bold text-blue-500 hover:opacity-80"
-                >
-                  Code <GithubLogo size={19} />
-                </a>
+                {e.githubURL && (
+                  <a
+                    href={e.githubURL}
+                    className="flex items-center gap-1 rounded-lg border border-neutral-800 px-2 py-0.5 text-[0.9rem] font-bold text-blue-500 hover:opacity-80"
+                  >
+                    Code <GithubLogo size={19} />
+                  </a>
+                )}
               </div>
             </div>
           </div>

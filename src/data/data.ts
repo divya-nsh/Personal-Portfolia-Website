@@ -1,4 +1,5 @@
 import { icons, TLogoProp } from "@/Components/icons";
+import { TProject } from "@/types/types";
 import {
   Envelope,
   GithubLogo,
@@ -6,14 +7,14 @@ import {
   XLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
-export const projects = [
+export const projects: TProject[] = [
   {
     id: "1",
     title: "StoryNest - Blogg App",
     slug: "story-next-blog-app",
     discription:
       "A MERN stack-based blogging platform with essential features for user interaction and content management, hosted on render and vercel",
-    imageURL: "/images/social-blog-app-screenshot.png",
+    images: ["/images/social-blog-app-screenshot.png"],
     features: [
       "Integrated cloudinary for image uploads & transformations.",
       "Authentication: Sign up, log in, and recover passwords and integrate Google One Tap OAuth for a seamless experience.",
@@ -48,10 +49,10 @@ export const projects = [
     slug: "mern-stack-todos-app",
     discription:
       "Simple todo app where users can Login and add, edit, delete, and toggle the completion status of tasks he have to do. created this to practice mern stack and learn to deploy. Backend is hosted on a Render free service which spin down server after every 15 minute of inactivity resulting to coldstart",
-    imageURL: "/images/mern-todos-screenshot.jpeg",
+    images: ["/images/mern-todos-screenshot.jpeg"],
     techStack: ["ReactJS", "MongoDB", "Expressjs", "TailwindCss", "Typescript"],
     githubURL: "https://github.com/divya-nsh/MERN-Todos",
-    liveURL: "https://story-nest-blog-app.vercel.app/",
+    liveURL: "https://mern-todos-ten.vercel.app/",
   },
   {
     id: "3",
@@ -59,7 +60,10 @@ export const projects = [
     slug: "tic-tac-toe-multiplayer-online",
     discription:
       "A classic turn-based Tic-Tac-Toe game that can be played offline or online by creating private rooms. Supports larger boards up to 6×6 for a more challenging experience",
-    imageURL: "/images/tic-tac-toe-ultimate-screenshot.jpeg",
+    images: [
+      "/images/tic-tac-toe-ultimate-screenshot.jpeg",
+      "https://res.cloudinary.com/dets3mcof/image/upload/v1772784170/Personal-Portfolio-Assets/d483b6e1-43e5-4a17-b65a-6cebd43d1722.png",
+    ],
     techStack: ["Node", "React", "Socket.io", "TailwindCss", "Typescript"],
     githubURL: "https://github.com/divya-nsh/Tic-Tac-Toe-Ultimate",
     liveURL: "https://tic-tac-toe-ultimate-eight.vercel.app/",
@@ -87,23 +91,56 @@ export const projects = [
   //   liveURL: "https://tic-tac-toe-game-theta-fawn.vercel.app/",
   // },
   {
+    id: "7",
+    title: "ERP Sales Module (Work in Progress)",
+    slug: "erp-sales-module",
+    discription:
+      "Worked on modernizing selective modules of an company existing ASP.NET Web Forms–based ERP system at Pegasus International Computer Co. by building a fast, responsive, and user-friendly interface using a modern stack. Developed a React-based UI to replace parts of the legacy interface while preserving the original workflow. Built Node.js APIs with TypeScript connected to the existing SQL Server database to handle data operations and ensure the new application behavior matched the legacy ERP system. Also implemented JWT-based authentication with multi-user support and access control, improving security, performance, and overall usability of the system.",
+    images: [
+      //Products PAge
+      "https://res.cloudinary.com/dets3mcof/image/upload/v1772792231/Personal-Portfolio-Assets/8761846d-148f-4fbc-86c0-503fcbc06453.png",
+
+      // Sales Order List Page
+      "https://res.cloudinary.com/dets3mcof/image/upload/v1772792374/Personal-Portfolio-Assets/64839500-b2aa-436d-9708-b91d9fa0def7.png",
+
+      // Edit Sales Order Page
+      "https://res.cloudinary.com/dets3mcof/image/upload/v1772792431/Personal-Portfolio-Assets/bde21a1e-a32d-4803-9e30-bcea9dd9bddf.png",
+
+      // Sales Order Page PArt 2
+      "https://res.cloudinary.com/dets3mcof/image/upload/v1772792436/Personal-Portfolio-Assets/70df7ecd-9ebe-4af2-bd71-12dea85cd87b.png",
+    ],
+    techStack: [
+      "ReactJS",
+      "TailwindCss",
+      "Nodejs",
+      "Tanstack Router",
+      "SQLServer",
+      "Kysely (Query Builder)",
+      "Typescript",
+    ],
+  },
+  {
     id: "4",
     title: "Gift Chain Ai Landing Page",
     slug: "gift-chain-ai-landing-page",
     discription:
       "A visually appealing responsive web page built as part of the Scrimba JavaScriptmas Challenge 2024. This project involved transforming a Figma design (https://scrimba.com/links/santa-saas-figma) into a functional responsive web page. It was bit tricky to build using just html and css",
-    imageURL: "/images/gift-chain-ai-screenshot.jpeg",
+    images: [
+      "/images/gift-chain-ai-screenshot.jpeg",
+      "/images/gift-chain-ai-screenshot.jpeg",
+    ],
     techStack: ["HTML", "CSS"],
     githubURL: "https://github.com/divya-nsh/Gift-Chain-Ai-Landing-Page",
     liveURL: " https://divya-nsh.github.io/Gift-Chain-Ai-Landing-Page/",
   },
+
   {
     id: "5",
     title: "JS Canva Particle Effect",
     slug: "javascript-canva-particle-effect",
     discription:
       "This is an interactive JavaScript-based particle animation creates a dynamic stream of multi-colored lights that follow the cursor as it moves across the canvas, gradually fading away. It also features a toggleable connection effect, where particles can be connected by lines. Intuition behind this project was to learn how to use JavaScript Canvas and create animations with it.",
-    imageURL: "/images/canva-particle-screenshot.jpg",
+    images: ["/images/canva-particle-screenshot.jpg"],
     techStack: ["Javascript"],
     githubURL: "https://github.com/divya-nsh/canva-particle-effect",
     liveURL: "https://canva-particle-effect.onrender.com/",
@@ -120,10 +157,10 @@ export const projects = [
       "Static Site Generation (SSG) for projects pages.",
       "Utilizes React Server Components (RSC) for a smaller bundle size and improved performance.",
     ],
-    imageURL: "/images/personal-site-screenshot.jpg",
+    images: ["/images/personal-site-screenshot.jpg"],
 
     techStack: ["Next.js", "TailwindCss"],
-    githubURL: "XXXXXXXXXXXXXXXXXXXXXX",
+    githubURL: "https://github.com/divya-nsh/Personal-Portfolia-Website",
   },
 ];
 

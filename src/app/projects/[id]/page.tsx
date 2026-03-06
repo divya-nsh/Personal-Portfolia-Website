@@ -55,19 +55,21 @@ export default async function ProjectDetailPage(props: Props) {
           {project.liveURL && (
             <a
               target="_blank"
-              className="flex items-center gap-1 rounded-md bg-green-700 px-2 py-0.5 text-[1rem] font-bold hover:opacity-80"
+              className="flex items-center gap-1 rounded-md bg-green-700 px-2 py-0.5 text-sm font-bold hover:opacity-80"
               href={project.liveURL}
             >
               Live <ArrowSquareOut size={18} />
             </a>
           )}
-          <a
-            target="_blank"
-            href={project.githubURL}
-            className="flex items-center gap-1 rounded-md bg-blue-700 px-2 py-0.5 text-[1rem] font-bold hover:opacity-80"
-          >
-            Code <GithubLogo size={19} />
-          </a>
+          {project.githubURL && (
+            <a
+              target="_blank"
+              href={project.githubURL}
+              className="flex items-center gap-1 rounded-md bg-blue-700 px-2 py-0.5 text-sm font-bold hover:opacity-80"
+            >
+              Code <GithubLogo size={19} />
+            </a>
+          )}
         </div>
 
         {!!project.techStack.length && (
@@ -106,15 +108,19 @@ export default async function ProjectDetailPage(props: Props) {
           </div>
         )}
 
-        <Image
-          quality={100}
-          alt="Project Screenshort"
-          loading="eager"
-          width={900}
-          height={506}
-          className="mt-6 w-full rounded-lg border border-neutral-800 bg-neutral-800 object-contain"
-          src={project.imageURL || "https://placehold.co/300"}
-        />
+        <div className="mx-auto">
+          {project.images.map((url, i) => (
+            <Image
+              key={i}
+              alt="Project Screenshot"
+              loading="lazy"
+              width={900}
+              height={500}
+              className="mt-6 max-h-[500px] rounded-lg border border-neutral-800 bg-neutral-800 object-contain"
+              src={url || "https://placehold.co/300"}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
