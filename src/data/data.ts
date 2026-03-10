@@ -164,9 +164,9 @@ export const projects: TProject[] = [
   },
 ];
 
-export function getProject(idOrSlug?: string) {
-  if (!idOrSlug) return null;
-  return projects.find((v) => v.id === idOrSlug || v.slug === idOrSlug);
+export function getProjectBySlug(slug?: string) {
+  if (!slug) return null;
+  return projects.find((v) => v.slug === slug);
 }
 
 export const links = [

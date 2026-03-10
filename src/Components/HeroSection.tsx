@@ -2,7 +2,7 @@ import React from "react";
 import { MultiWriteTextEffect } from "./MutiWriteTxtEffect";
 import { DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 import { links } from "@/data/data";
-import { getImageProps } from "next/image";
+import Image, { getImageProps } from "next/image";
 import cartoonAvatar from "@/assets/cartoon-avatar.jpg";
 
 function getBackgroundImage(srcSet = "") {
@@ -97,6 +97,14 @@ function AnimtedHeroImage() {
 
   return (
     <div className="grid size-[280px] place-items-center lg:size-[330px]">
+      {/* For SEO PURPOSE */}
+      <Image
+        src={cartoonAvatar}
+        alt="My Avatar"
+        width={300}
+        height={300}
+        className="sr-only"
+      />
       <div className="box size-[280px] shrink-0 md:size-[300px]">
         <div className="spin-container size-[250px] md:size-[280px]">
           <div className="shape size-[250px] md:size-[280px]">

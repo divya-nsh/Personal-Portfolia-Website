@@ -12,10 +12,13 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
+const title = "Divyansh Soni - Software Developer";
+const description =
+  "Hi, I'm Divyansh Soni, a full-stack web developer passionate about building modern, scalable web applications. Explore my projects, skills, and experience.";
+
 export const metadata: Metadata = {
-  title: "Divyansh Soni",
-  description:
-    "Hi, I'm Divyansh Soni, a full-stack web developer passionate about building modern, scalable web applications. Explore my projects, skills, and experience.",
+  title,
+  description,
   keywords: [
     "Divyansh Soni",
     "Full-Stack Developer",
@@ -25,14 +28,17 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://divyanshsoni.site"),
   openGraph: {
+    title,
+    description,
     images: [
       {
         url: "/images/og-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "Divyansh Avatar",
       },
     ],
+    locale: "en",
+    type: "website",
   },
 };
 
