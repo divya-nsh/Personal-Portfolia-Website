@@ -13,7 +13,7 @@ export type TExperience = {
 export const experiences: TExperience[] = [
   {
     title: "Frontend Developer",
-    company: "Pegasus International computer Co",
+    company: "Pegasua Turnkey solutiom (OPC) pvt",
     companyLink: "https://www.pegasustech.net/",
     duration: "Feb 2025 - Present",
     skills: [
