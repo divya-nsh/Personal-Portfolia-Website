@@ -38,7 +38,6 @@ export default function ProjectsSec() {
                     width: "100%",
                     aspectRatio: "16 / 9",
                   }}
-                  quality={100}
                   width={400}
                   height={250}
                   alt={`${e.title} preview`}
