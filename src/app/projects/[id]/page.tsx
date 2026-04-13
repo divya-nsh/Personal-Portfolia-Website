@@ -9,6 +9,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Metadata } from "next";
+import { SITE_LIVE_URL } from "@/constants";
 
 type Params = Promise<{ id: string }>;
 
@@ -16,12 +17,11 @@ type Props = {
   params: Params;
 };
 
-const SITE_URL = "https://divyanshsoni.site";
 const DEFAULT_OG_IMAGE = "/images/og-1200x630.png";
 
 function toAbsoluteImageUrl(image: string) {
   if (/^https?:\/\//i.test(image)) return image;
-  return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
+  return `${SITE_LIVE_URL}${image.startsWith("/") ? image : `/${image}`}`;
 }
 
 export function generateStaticParams(): Awaited<Params>[] {
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = project.discription;
   const image = project.images.find(Boolean) ?? DEFAULT_OG_IMAGE;
   const imageUrl = toAbsoluteImageUrl(image);
-  const projectUrl = `${SITE_URL}/projects/${project.slug}`;
+  const projectUrl = `${SITE_LIVE_URL}/projects/${project.slug}`;
 
   return {
     title,

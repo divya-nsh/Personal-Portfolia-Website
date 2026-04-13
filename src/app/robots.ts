@@ -1,6 +1,5 @@
+import { SITE_LIVE_URL } from "@/constants";
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://divyanshsoni.site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    host: siteUrl,
-    sitemap: `${siteUrl}/sitemap.xml`,
+    host: SITE_LIVE_URL,
+    sitemap: `${SITE_LIVE_URL}/sitemap.xml`,
   };
 }

@@ -1,21 +1,20 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/data";
-
-const siteUrl = "https://divyanshsoni.site";
+import { SITE_LIVE_URL } from "@/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  // Relative URLs are works here, It need absolute URLs
+  // Relative URLs  not works works here, It need absolute URLs
   const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: `${siteUrl}/`,
+      url: `${SITE_LIVE_URL}`,
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${siteUrl}/about`,
+      url: `${SITE_LIVE_URL}/about`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -23,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${siteUrl}/projects/${project.slug}`,
+    url: `${SITE_LIVE_URL}/projects/${project.slug}`,
     lastModified,
     changeFrequency: "monthly",
     priority: 0.7,

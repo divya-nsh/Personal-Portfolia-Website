@@ -5,6 +5,7 @@ import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import ScrollToTop from "@/Components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_LIVE_URL } from "@/constants";
 
 const roboto = Roboto({
   variable: "--font-robot",
@@ -23,11 +24,22 @@ export const metadata: Metadata = {
     "Divyansh Soni",
     "Full-Stack Developer",
     "React Developer",
-    "Nodejs Developer",
+    "Next.js Developer",
+    "Node.js Developer",
     "JavaScript Developer",
+    "TypeScript Developer",
+    "Web Developer Portfolio",
+    // Location-based
+    "Web Developer in Udaipur",
+    "Software Developer in Udaipur",
+    "Full-Stack Developer in Udaipur",
+    "Freelance Developer Udaipur",
+    "Web Developer in Rajasthan",
   ],
-  metadataBase: new URL("https://divyanshsoni.site"),
+  metadataBase: new URL(SITE_LIVE_URL),
+  alternates: { canonical: SITE_LIVE_URL },
   openGraph: {
+    url: SITE_LIVE_URL,
     title,
     description,
     images: [
@@ -37,8 +49,14 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    locale: "en",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/og-1200x630.png"],
   },
 };
 
