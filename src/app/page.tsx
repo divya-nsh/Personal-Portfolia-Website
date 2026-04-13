@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectsSec from "@/Components/ProjectsSec";
 import SkillsSec from "@/Components/SkillsSec";
 import ExperienceSection from "@/Components/ExperienceSection";

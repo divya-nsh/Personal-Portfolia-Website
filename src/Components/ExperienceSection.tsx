@@ -1,7 +1,8 @@
+"use client";
 import { experiences } from "@/data/expirences";
-import React from "react";
 import { MapPin, CalendarBlank } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export default function ExperienceSection() {
   return (
@@ -19,9 +20,14 @@ export default function ExperienceSection() {
 
         {/* Experience Timeline */}
         <div className="grid gap-6">
-          {experiences.map((experience, index) => (
-            <div
-              key={index}
+          {experiences.map((experience, idx) => (
+            <motion.div
+              whileHover={{ y: -3, scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              key={idx}
               className="group relative rounded-lg border-neutral-700 bg-neutral-900/50 px-6 py-6 backdrop-blur-sm transition-all duration-300"
             >
               {/* Timeline dot */}
@@ -96,7 +102,7 @@ export default function ExperienceSection() {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

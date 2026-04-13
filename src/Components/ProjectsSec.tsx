@@ -1,8 +1,9 @@
+"use client";
 import { projects } from "@/data/data";
 import { ArrowSquareOut, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { motion } from "motion/react";
 
 export default function ProjectsSec() {
   return (
@@ -26,8 +27,16 @@ export default function ProjectsSec() {
         aria-label="Project list"
         className="m-0 mt-10 flex list-none flex-wrap justify-center gap-6 p-0"
       >
-        {projects.map((e) => (
-          <li key={e.id} className="w-[370px] list-none md:max-w-[390px]">
+        {projects.map((e, idx) => (
+          <motion.li
+            whileHover={{ y: -3, scale: 1.02 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.08 }}
+            key={idx}
+            className="h-max w-[370px] list-none rounded-xl shadow-slate-900 hover:shadow-lg md:max-w-[390px]"
+          >
             <article className="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
               <Link
                 href={`/projects/${e.slug}`}
@@ -47,7 +56,7 @@ export default function ProjectsSec() {
               </Link>
 
               <div className="pb-2 pt-1">
-                <h3 className="mt-2 text-2xl font-medium text-neutral-100">
+                <h3 className="mt-2 truncate text-2xl font-medium text-neutral-100">
                   <Link
                     href={`/projects/${e.slug}`}
                     className="transition-all duration-200 hover:underline"
@@ -102,7 +111,7 @@ export default function ProjectsSec() {
                 </div>
               </div>
             </article>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>
