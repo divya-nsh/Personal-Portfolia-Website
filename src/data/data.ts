@@ -44,15 +44,24 @@ export const projects: TProject[] = [
     liveURL: "https://story-nest-blog-app.vercel.app/",
   },
   {
-    id: "2",
-    title: "Mern todos",
-    slug: "mern-stack-todos-app",
+    id: "3",
+    title: "AI Quiz Generator",
+    slug: "ai-quiz-generator",
     discription:
-      "Simple todo app where users can Login and add, edit, delete, and toggle the completion status of tasks he have to do. created this to practice mern stack and learn to deploy. Backend is hosted on a Render free service which spin down server after every 15 minute of inactivity resulting to coldstart",
-    images: ["/images/mern-todos-screenshot.jpeg"],
-    techStack: ["ReactJS", "MongoDB", "Expressjs", "TailwindCss", "Typescript"],
-    githubURL: "https://github.com/divya-nsh/MERN-Todos",
-    liveURL: "https://mern-todos-ten.vercel.app/",
+      "An interactive web application that lets you create quizzes on any topic using AI. Choose the topic and number of questions, then instantly generate a customized quiz to learn, practice, or test your knowledge. with additional features like score tracking, timer and Web Speech API integration for a hands-free experience",
+    images: [
+      "/images/ai-quiz-generator/thumbnail.png",
+      "/images/ai-quiz-generator/screenshot.png",
+    ],
+    features: [
+      "AI-generated quizzes on any topic using Groq AI SDK .",
+      "Web Speech API integration for a hands-free, voice-assisted experience.",
+      "Clean and responsive UI built with Shadcn UI components.",
+    ],
+    techStack: ["Tanstack Start", "ReactJS", "Shadcn UI", "Groq API"],
+    // Spelling mistake in url of app link which we can't fix so keep it as it is
+    githubURL: "https://github.com/divya-nsh/ai-quize-generator",
+    liveURL: "https://ai-quize-generator.vercel.app/",
   },
   {
     id: "3",
@@ -78,6 +87,17 @@ export const projects: TProject[] = [
       "AI Opponent: Challenge yourself against a basic AI when playing offline.",
       "Intuitive UI: User-friendly interface with clear indicators for turns and game status.",
     ],
+  },
+  {
+    id: "2",
+    title: "Mern todos",
+    slug: "mern-stack-todos-app",
+    discription:
+      "Simple todo app where users can Login and add, edit, delete, and toggle the completion status of tasks he have to do. created this to practice mern stack and learn to deploy. Backend is hosted on a Render free service which spin down server after every 15 minute of inactivity resulting to coldstart",
+    images: ["/images/mern-todos-screenshot.jpeg"],
+    techStack: ["ReactJS", "MongoDB", "Expressjs", "TailwindCss", "Typescript"],
+    githubURL: "https://github.com/divya-nsh/MERN-Todos",
+    liveURL: "https://mern-todos-ten.vercel.app/",
   },
   // {
   //   id: "3",
@@ -217,9 +237,12 @@ export const skills: Array<{ category: string; skills: Skill[] }> = [
   {
     category: "Tools & Other",
     skills: [
+      { label: "Electronjs", Icon: icons.ElectronJs },
+
       { label: "Git & GitHub", Icon: icons.Github },
       // { label: "Figma", Icon: icons.Figma },
       { label: "Postman", Icon: icons.PostMan },
+      { label: "Full Stack App", Icon: "" },
     ],
   },
 ];
