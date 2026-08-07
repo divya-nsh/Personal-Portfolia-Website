@@ -52,6 +52,7 @@ export const projects: TProject[] = [
     images: [
       "/images/ai-quiz-generator/thumbnail.png",
       "/images/ai-quiz-generator/screenshot.png",
+      "/images/ai-quiz-generator/screenshot2.png",
     ],
     features: [
       "AI-generated quizzes on any topic using Groq AI SDK .",

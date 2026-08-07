@@ -181,7 +181,7 @@ export default async function Page(props: Props) {
                   loading="lazy"
                   width={900}
                   height={500}
-                  className="mt-6 max-h-[500px] rounded-lg border border-neutral-800 bg-neutral-800 object-contain"
+                  className="mt-6 max-h-[500px] rounded-lg border-neutral-800 object-contain"
                   src={url || "https://placehold.co/300"}
                 />
               </li>
