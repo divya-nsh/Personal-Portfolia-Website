@@ -10,19 +10,22 @@ import {
 import Link from "next/link";
 import { Metadata } from "next";
 import { SITE_LIVE_URL } from "@/constants";
+import {
+  DEFAULT_OG_IMAGE,
+  breadcrumbNode,
+  pageOpenGraph,
+  pageTwitter,
+  projectNode,
+  schemaGraph,
+  toMetaDescription,
+} from "@/seo";
+import JsonLd from "@/Components/JsonLd";
 
 type Params = Promise<{ id: string }>;
 
 type Props = {
   params: Params;
 };
-
-const DEFAULT_OG_IMAGE = "/images/og-1200x630.png";
-
-function toAbsoluteImageUrl(image: string) {
-  if (/^https?:\/\//i.test(image)) return image;
-  return `${SITE_LIVE_URL}${image.startsWith("/") ? image : `/${image}`}`;
-}
 
 export function generateStaticParams(): Awaited<Params>[] {
   return projects.map((v) => ({
@@ -36,29 +39,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(id);
   if (!project) notFound();
 
-  const title = `${project.title} - Divyansh Soni`;
-  const description = project.discription;
+  const title = project.title;
+  const description = toMetaDescription(project.discription);
   const image = project.images.find(Boolean) ?? DEFAULT_OG_IMAGE;
-  const imageUrl = toAbsoluteImageUrl(image);
   const projectUrl = `${SITE_LIVE_URL}/projects/${project.slug}`;
 
   return {
     title,
     description,
+    keywords: [project.title, ...project.techStack],
     alternates: {
       canonical: projectUrl,
     },
-    openGraph: {
-      locale: "en",
+    openGraph: pageOpenGraph({
       title,
       description,
-      type: "website",
-      images: [
-        {
-          url: imageUrl,
-        },
-      ],
-    },
+      url: projectUrl,
+      image,
+      imageAlt: `${project.title} — project screenshot`,
+    }),
+    twitter: pageTwitter({
+      title,
+      description,
+      image,
+      imageAlt: `${project.title} — project screenshot`,
+    }),
   };
 }
 
@@ -68,8 +73,16 @@ export default async function Page(props: Props) {
   const project = getProjectBySlug(id);
   if (!project) notFound();
 
+  const relatedProjects = projects
+    .filter((p) => p.slug !== project.slug)
+    .slice(0, 3);
+
   return (
     <article className="mx-auto mb-[100px] mt-4 grid max-w-4xl rounded-xl px-4">
+      <JsonLd
+        data={schemaGraph(projectNode(project), breadcrumbNode(project))}
+      />
+
       <nav aria-label="Back navigation">
         <Link
           href="/"
@@ -90,7 +103,7 @@ export default async function Page(props: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 rounded-md bg-green-700 px-2 py-0.5 text-sm font-bold hover:opacity-80"
-              href={project.liveURL}
+              href={project.liveURL.trim()}
               aria-label={`Open live demo for ${project.title} in a new tab`}
             >
               Live <ArrowSquareOut aria-hidden="true" size={18} />
@@ -100,7 +113,7 @@ export default async function Page(props: Props) {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href={project.githubURL}
+              href={project.githubURL.trim()}
               className="flex items-center gap-1 rounded-md bg-blue-700 px-2 py-0.5 text-sm font-bold hover:opacity-80"
               aria-label={`Open source code for ${project.title} in a new tab`}
             >
@@ -177,13 +190,45 @@ export default async function Page(props: Props) {
             {project.images.map((url, i) => (
               <li key={`${project.slug}-image-${i}`} className="list-none">
                 <Image
-                  alt={`${project.title} screenshot ${i + 1}`}
+                  alt={`${project.title} — screenshot ${i + 1}`}
                   loading="lazy"
                   width={900}
                   height={500}
+                  sizes="(max-width: 900px) 100vw, 900px"
                   className="mt-6 max-h-[500px] rounded-lg border-neutral-800 object-contain"
                   src={url || "https://placehold.co/300"}
                 />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {!!relatedProjects.length && (
+        <section
+          aria-labelledby="more-projects-heading"
+          className="mt-14 border-t border-neutral-800 pt-8"
+        >
+          <h2
+            id="more-projects-heading"
+            className="text-xl font-medium text-neutral-200"
+          >
+            More projects
+          </h2>
+          <ul className="m-0 mt-4 grid list-none gap-3 p-0 sm:grid-cols-3">
+            {relatedProjects.map((related) => (
+              <li key={related.slug}>
+                <Link
+                  href={`/projects/${related.slug}`}
+                  className="block h-full rounded-lg border border-neutral-800 bg-neutral-900/60 p-4 transition-colors hover:border-neutral-600"
+                >
+                  <span className="font-medium text-neutral-100">
+                    {related.title}
+                  </span>
+                  <span className="mt-1 block text-sm text-neutral-400">
+                    {related.techStack.slice(0, 2).join(" · ")}
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>

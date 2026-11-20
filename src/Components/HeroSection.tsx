@@ -53,12 +53,13 @@ export default function HeroSec() {
           </div>
         </motion.div>
 
-        <motion.h2
+        <motion.h1
           variants={itemVariants}
           className="duration-600 -mt-2 text-5xl font-bold text-neutral-300"
         >
           Hi, I&apos;m <span className="gradient-text"> Divyansh Soni</span>
-        </motion.h2>
+          <span className="sr-only"> — Full-Stack Web Developer</span>
+        </motion.h1>
         <motion.p
           variants={itemVariants}
           className="text-2xl font-bold text-neutral-300"
@@ -144,7 +145,7 @@ function AnimtedHeroImage() {
       {/* For SEO PURPOSE */}
       <Image
         src={cartoonAvatar}
-        alt="My Avatar"
+        alt="Divyansh Soni, full-stack web developer"
         width={300}
         height={300}
         className="sr-only"

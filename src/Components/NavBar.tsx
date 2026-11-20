@@ -7,7 +7,7 @@ export default function NavBar() {
     <div className="border-b border-neutral-900 py-3">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6">
         <Link href="/" className="text-lg font-medium text-neutral-300">
-          <Image src={logo} alt="logo" />
+          <Image src={logo} alt="DS" />
         </Link>
         <ul className="flex gap-6 text-neutral-300">
           <li className="transition-all duration-200 hover:text-blue-400">

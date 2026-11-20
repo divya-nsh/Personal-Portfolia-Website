@@ -1,14 +1,22 @@
+import type { Metadata } from "next";
 import ProjectsSec from "@/Components/ProjectsSec";
 import SkillsSec from "@/Components/SkillsSec";
 import ExperienceSection from "@/Components/ExperienceSection";
 import HeroSec from "@/Components/HeroSection";
+import JsonLd from "@/Components/JsonLd";
 import Image from "next/image";
 import gif from "@/assets/Cat-Typing.gif";
+import { SITE_LIVE_URL } from "@/constants";
+import { personNode, schemaGraph, websiteNode } from "@/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_LIVE_URL },
+};
 
 export default function IndexPage() {
   return (
     <>
-      <h1 className="sr-only">Divyansh Soni — Full-Stack Web Developer</h1>
+      <JsonLd data={schemaGraph(websiteNode(), personNode())} />
       <HeroSec />
       <div className="mb-[50px]" />
       <SkillsSec />

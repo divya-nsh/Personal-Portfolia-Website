@@ -25,7 +25,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-neutral-900 bg-gradient-to-t from-purple-800/12 to-purple-800/5 pb-6">
+    <footer className="from-purple-800/12 relative border-t border-neutral-900 bg-gradient-to-t to-purple-800/5 pb-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-10">
         <div className="mb-2 flex gap-1 pt-5">
           {links.map((v, i) => (
@@ -41,8 +41,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-2 text-center text-neutral-400 italic">
-          © 2025 Divyansh Soni. All rights reserved.
+        <p className="mt-2 text-center italic text-neutral-400">
+          © {new Date().getFullYear()} Divyansh Soni. All rights reserved.
         </p>
       </div>
     </footer>

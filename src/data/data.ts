@@ -13,7 +13,7 @@ export const projects: TProject[] = [
     title: "StoryNest - Blogg App",
     slug: "story-next-blog-app",
     discription:
-      "A MERN stack-based blogging platform with essential features for user interaction and content management, hosted on render and vercel",
+      "A MERN stack-based blogging platform with essential features for user interaction and content management, hosted on Render and Vercel",
     images: ["/images/social-blog-app-screenshot.png"],
     features: [
       "Integrated cloudinary for image uploads & transformations.",
@@ -26,7 +26,7 @@ export const projects: TProject[] = [
       "User Interaction: View and interact with other users' profiles and posts through likes, bookmarks, and comments.",
       "Performance Optimized: API preconnection for faster loading times.",
       "Responsive Design with light/Dark Mode.",
-      "Secure against XXS Attack.",
+      "Secure against XSS attacks.",
       "And many more..",
     ],
 
@@ -36,7 +36,7 @@ export const projects: TProject[] = [
       "Expressjs",
       "MongoDB",
       "React Query",
-      "Typscript",
+      "TypeScript",
       "Cloudinary",
     ],
 
@@ -44,7 +44,7 @@ export const projects: TProject[] = [
     liveURL: "https://story-nest-blog-app.vercel.app/",
   },
   {
-    id: "3",
+    id: "8",
     title: "AI Quiz Generator",
     slug: "ai-quiz-generator",
     discription:
@@ -94,7 +94,7 @@ export const projects: TProject[] = [
     title: "Mern todos",
     slug: "mern-stack-todos-app",
     discription:
-      "Simple todo app where users can Login and add, edit, delete, and toggle the completion status of tasks he have to do. created this to practice mern stack and learn to deploy. Backend is hosted on a Render free service which spin down server after every 15 minute of inactivity resulting to coldstart",
+      "Simple todo app where users can log in and add, edit, delete, and toggle the completion status of tasks. I created this to practice the MERN stack and learn to deploy. The backend is hosted on a Render free service which spins down the server after every 15 minutes of inactivity, resulting in a cold start.",
     images: ["/images/mern-todos-screenshot.jpeg"],
     techStack: ["ReactJS", "MongoDB", "Expressjs", "TailwindCss", "Typescript"],
     githubURL: "https://github.com/divya-nsh/MERN-Todos",
@@ -116,7 +116,7 @@ export const projects: TProject[] = [
     title: "ERP Sales Module (Work in Progress)",
     slug: "erp-sales-module",
     discription:
-      "Worked on modernizing selective modules of an company existing ASP.NET Web Forms–based ERP system at Pegasus International Computer Co. by building a fast, responsive, and user-friendly interface using a modern stack. Developed a React-based UI to replace parts of the legacy interface while preserving the original workflow. Built Node.js APIs with TypeScript connected to the existing SQL Server database to handle data operations and ensure the new application behavior matched the legacy ERP system. Also implemented JWT-based authentication with multi-user support and access control, improving security, performance, and overall usability of the system.",
+      "Worked on modernizing selective modules of a company's existing ASP.NET Web Forms–based ERP system at Pegasus International Computer Co. by building a fast, responsive, and user-friendly interface using a modern stack. Developed a React-based UI to replace parts of the legacy interface while preserving the original workflow. Built Node.js APIs with TypeScript connected to the existing SQL Server database to handle data operations and ensure the new application behavior matched the legacy ERP system. Also implemented JWT-based authentication with multi-user support and access control, improving security, performance, and overall usability of the system.",
     images: [
       //Products PAge
       "https://res.cloudinary.com/dets3mcof/image/upload/v1772792231/Personal-Portfolio-Assets/8761846d-148f-4fbc-86c0-503fcbc06453.png",
@@ -146,13 +146,10 @@ export const projects: TProject[] = [
     slug: "gift-chain-ai-landing-page",
     discription:
       "A visually appealing responsive web page built as part of the Scrimba JavaScriptmas Challenge 2024. This project involved transforming a Figma design (https://scrimba.com/links/santa-saas-figma) into a functional responsive web page. It was bit tricky to build using just html and css",
-    images: [
-      "/images/gift-chain-ai-screenshot.jpeg",
-      "/images/gift-chain-ai-screenshot.jpeg",
-    ],
+    images: ["/images/gift-chain-ai-screenshot.jpeg"],
     techStack: ["HTML", "CSS"],
     githubURL: "https://github.com/divya-nsh/Gift-Chain-Ai-Landing-Page",
-    liveURL: " https://divya-nsh.github.io/Gift-Chain-Ai-Landing-Page/",
+    liveURL: "https://divya-nsh.github.io/Gift-Chain-Ai-Landing-Page/",
   },
 
   {
