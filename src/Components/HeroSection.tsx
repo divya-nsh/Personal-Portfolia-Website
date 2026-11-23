@@ -79,9 +79,10 @@ export default function HeroSec() {
           variants={itemVariants}
           className="max-w-[600px] text-[1.1rem] text-neutral-300"
         >
-          I&apos;m aspiring full-stack web developer. focused on creating
-          user-friendly, visually appealing, and responsive web applications.
-          Passionate about learning and building new things.
+          I&apos;m a full-stack developer building reliable, user-friendly
+          applications with React, Next.js, TypeScript, and Node.js. I combine
+          hands-on development with AI-assisted coding workflows and enjoy solving
+          problems, learning, and contributing to a team.
         </motion.p>
 
         <motion.div
