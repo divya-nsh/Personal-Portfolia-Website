@@ -1,0 +1,50 @@
+export const meta = {
+  title: "Price Checker Middleware: Retail Kiosk Pricing Platform",
+  shortDescription:
+    "Windows middleware that lets in-store price checker kiosks look up live prices from a retailer's own database, ERP API or CSV. Published on the Microsoft Store.",
+  tags: [
+    "Electronjs",
+    "Electron Builder",
+    "ReactJS",
+    "Expressjs",
+    "SQLite",
+    "Typescript",
+  ],
+  coverImage: "/images/price-checker-middleware/1-1366x736.png",
+  rank: 3,
+  liveURL: "https://apps.microsoft.com/detail/9phqkx1fqtsx?hl=en-US&gl=IN",
+};
+
+## Overview
+
+A Windows desktop app that connects price checker kiosks to a store's existing pricing data. When a customer scans a barcode, the kiosk calls the middleware's Express API, which looks up the product in the store's datasource and returns the price along with promotional media and other information.
+
+```
+Android kiosk ── barcode ──► Middleware (Windows / cloud) ──► CSV · MSSQL · PostgreSQL · REST API
+              ◄─ product + price ─
+```
+
+## Features
+
+- **Pluggable datasources:** CSV, MSSQL, PostgreSQL and REST APIs, with field mapping and a built-in lookup test.
+- **Multi-store support:** per-location datasources, with a `{{location_code}}` placeholder for queries and API calls.
+- **Device management:** kiosks self-register, and an admin can change their template or location.
+- **Screen templates:** promo banners and media are managed centrally and synced to devices automatically.
+- **Easy deployment:** runs on a store PC or a cloud server, starts with Windows and lives in the system tray.
+- **Licensing:** key activation, with one active machine per license.
+
+## My role
+
+- Designed the architecture and chose the tech stack.
+- Built the desktop app, the admin UI and the Express API that kiosks consume.
+- Built the datasource layer that adapts to different customer databases and ERP APIs.
+- Packaged the app with Electron Builder and published it on the Microsoft Store.
+- Worked with a teammate who built the Flutter Android kiosk app against my API.
+
+## Screenshots
+
+![Price Checker Middleware: Retail Kiosk Pricing Platform, screenshot 1](/images/price-checker-middleware/1-1366x736.png)
+![Price Checker Middleware: Retail Kiosk Pricing Platform, screenshot 2](/images/price-checker-middleware/2.png)
+![Price Checker Middleware: Retail Kiosk Pricing Platform, screenshot 3](/images/price-checker-middleware/3.png)
+![Price Checker Middleware: Retail Kiosk Pricing Platform, screenshot 4](/images/price-checker-middleware/4.png)
+![Price Checker Middleware: Retail Kiosk Pricing Platform, screenshot 5](/images/price-checker-middleware/5.webp)

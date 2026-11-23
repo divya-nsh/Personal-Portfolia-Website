@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/data/data";
+import { getMdxProjects } from "@/lib/projects";
 import { SITE_LAST_UPDATED, SITE_LIVE_URL } from "@/constants";
 import { toAbsoluteUrl } from "@/seo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const projects = await getMdxProjects();
   const lastModified = SITE_LAST_UPDATED;
 
   // Relative URLs  not works works here, It need absolute URLs
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${SITE_LIVE_URL}/projects`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
@@ -28,9 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: "monthly",
     priority: 0.7,
-    images: Array.from(new Set(project.images.filter(Boolean))).map(
-      toAbsoluteUrl,
-    ),
+    images: project.meta.coverImage
+      ? [toAbsoluteUrl(project.meta.coverImage)]
+      : [],
   }));
 
   return [...staticRoutes, ...projectRoutes];

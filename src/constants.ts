@@ -19,4 +19,4 @@ export const SOCIAL_PROFILES = [
 // Bump this date whenever the site's content changes. Used for <lastmod> in sitemap.xml.
 // Avoid `new Date()` here: it makes every URL look modified on every deploy, which
 // teaches crawlers to ignore your lastmod values.
-export const SITE_LAST_UPDATED = new Date("2026-11-20");
+export const SITE_LAST_UPDATED = new Date("2026-11-23");

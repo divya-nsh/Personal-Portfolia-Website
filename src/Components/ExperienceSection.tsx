@@ -1,7 +1,6 @@
 "use client";
 import { experiences } from "@/data/expirences";
 import { MapPin, CalendarBlank } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function ExperienceSection() {
@@ -84,7 +83,7 @@ export default function ExperienceSection() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {experience.skills.map((skill, skillIndex) => (
-                        <Link
+                        <a
                           href={skill.link}
                           key={skillIndex}
                           target="_blank"
@@ -96,7 +95,7 @@ export default function ExperienceSection() {
                           >
                             {skill.title}
                           </span>
-                        </Link>
+                        </a>
                       ))}
                     </div>
                   </div>

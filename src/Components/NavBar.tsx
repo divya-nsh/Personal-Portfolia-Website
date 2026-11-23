@@ -18,7 +18,7 @@ export default function NavBar() {
               key={v}
               className="transition-all duration-200 hover:text-blue-400"
             >
-              <Link href={"/#" + v.toLowerCase()}>{v}</Link>
+              <Link href={{ pathname: "/", hash: v.toLowerCase() }}>{v}</Link>
             </li>
           ))}
         </ul>

@@ -1,11 +1,11 @@
 "use client";
-import { projects } from "@/data/data";
 import { ArrowSquareOut, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { TProject } from "@/types/types";
 
-export default function ProjectsSec() {
+export default function ProjectsSec({ projects }: { projects: TProject[] }) {
   return (
     <section
       id="portfolia"

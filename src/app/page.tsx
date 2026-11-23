@@ -8,12 +8,15 @@ import Image from "next/image";
 import gif from "@/assets/Cat-Typing.gif";
 import { SITE_LIVE_URL } from "@/constants";
 import { personNode, schemaGraph, websiteNode } from "@/seo";
+import { getMdxProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   alternates: { canonical: SITE_LIVE_URL },
 };
 
-export default function IndexPage() {
+export default async function IndexPage() {
+  const projects = await getMdxProjects();
+
   return (
     <>
       <JsonLd data={schemaGraph(websiteNode(), personNode())} />
@@ -21,7 +24,17 @@ export default function IndexPage() {
       <div className="mb-[50px]" />
       <SkillsSec />
       <div className="mb-[80px]" />
-      <ProjectsSec />
+      <ProjectsSec
+        projects={projects.map((project) => ({
+          title: project.meta.title,
+          discription: project.meta.shortDescription ?? "",
+          slug: project.slug,
+          liveURL: project.meta.liveURL,
+          githubURL: project.meta.githubURL,
+          techStack: project.meta.tags,
+          images: project.meta.coverImage ? [project.meta.coverImage] : [],
+        }))}
+      />
       <div className="mb-[100px]" />
       <ExperienceSection />
 
