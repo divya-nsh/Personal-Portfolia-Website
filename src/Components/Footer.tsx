@@ -5,6 +5,7 @@ import {
   XLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import React from "react";
+import Link from "next/link";
 import { icons } from "@/Components/icons";
 
 const links = [
@@ -40,6 +41,13 @@ export default function Footer() {
             </a>
           ))}
         </div>
+
+        <Link
+          href="/projects"
+          className="text-sm text-neutral-400 hover:text-neutral-200 hover:underline"
+        >
+          Projects
+        </Link>
 
         <p className="mt-2 text-center italic text-neutral-400">
           © {new Date().getFullYear()} Divyansh Soni. All rights reserved.
