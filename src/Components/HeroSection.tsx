@@ -2,6 +2,7 @@
 import { MultiWriteTextEffect } from "./MutiWriteTxtEffect";
 import { DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 import { links } from "@/data/data";
+import { RESUME_URL } from "@/constants";
 import Image, { getImageProps } from "next/image";
 import cartoonAvatar from "@/assets/cartoon-avatar.jpg";
 import { motion, stagger, Variants } from "motion/react";
@@ -90,7 +91,7 @@ export default function HeroSec() {
           className="mt-2 flex w-full flex-wrap items-center gap-4"
         >
           <a
-            href={process.env.RESUME_LINK}
+            href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Download Resume"

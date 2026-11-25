@@ -7,6 +7,8 @@ export const SITE_DESCRIPTION =
   "Portfolio of Divyansh Soni, a full-stack web developer from Udaipur, India. Explore my projects, skills and experience building modern, scalable web apps with React, Next.js and Node.js.";
 
 export const CONTACT_EMAIL = "divyanshsoni279@gmail.com";
+export const RESUME_URL =
+  "https://drive.google.com/file/d/1xDcN4HXKlkLwpMq2iXdB7qkJkbdjX_Tk/view?usp=sharing";
 
 // Public profiles used for schema.org `sameAs` (helps search engines connect these profiles to the site).
 export const SOCIAL_PROFILES = [
