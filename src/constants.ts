@@ -1,5 +1,5 @@
 // Primary Main Domain of website
-export const SITE_LIVE_URL = "https://divyanshsoni.dev";
+export const SITE_LIVE_URL = "https://www.divyanshsoni.dev";
 
 export const SITE_NAME = "Divyansh Soni";
 export const SITE_TITLE = "Divyansh Soni — Full-Stack Web Developer";
